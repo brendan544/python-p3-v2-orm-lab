@@ -13,7 +13,42 @@ class Review:
         self.year = year
         self.summary = summary
         self.employee_id = employee_id
+ def create(cls, year, summary, employee_id):
+        review = cls(year, summary, employee_id)
+        # Simulate saving to a database and assigning an ID
+        review.id = 1  # Example ID; replace with actual DB logic
+        return review
 
+    def save(self):
+        # Logic to save the review to a database
+        pass
+
+    @classmethod
+    def get_all(cls):
+        # Logic to get all reviews from the database
+        return []
+
+    @classmethod
+    def get_all_for_employee(cls, employee_id):
+        # Logic to get all reviews for a specific employee
+        return []
+
+    @classmethod
+    def instance_from_db(cls, db_row):
+        return cls(db_row['year'], db_row['summary'], db_row['employee_id'])
+
+    @classmethod
+    def find_by_id(cls, review_id):
+        # Logic to find a review by ID in the database
+        return None  # Simulate not found for now
+
+    def update(self):
+        # Logic to update this review in the database
+        pass
+
+    def delete(self):
+        # Logic to delete this review from the database
+        pass
     def __repr__(self):
         return (
             f"<Review {self.id}: {self.year}, {self.summary}, "

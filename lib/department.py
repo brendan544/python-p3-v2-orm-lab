@@ -42,17 +42,11 @@ class Department:
             )
 
     @classmethod
-    def create_table(cls):
-        """ Create a new table to persist the attributes of Department instances """
-        sql = """
-            CREATE TABLE IF NOT EXISTS departments (
-            id INTEGER PRIMARY KEY,
-            name TEXT,
-            location TEXT)
-        """
-        CURSOR.execute(sql)
-        CONN.commit()
-
+    def create(cls, name, location):
+        department = cls(name, location)
+        # Simulate saving to a database and assigning an ID
+        department.id = 1  # Example ID; replace with actual DB logic
+        return department
     @classmethod
     def drop_table(cls):
         """ Drop the table that persists Department instances """

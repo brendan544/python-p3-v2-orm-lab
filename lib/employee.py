@@ -18,6 +18,12 @@ class Employee:
             f"<Employee {self.id}: {self.name}, {self.job_title}, " +
             f"Department ID: {self.department_id}>"
         )
+    def create(cls, name, title, department_id):
+        employee = cls(name, title, department_id)
+        # Simulate saving to a database and assigning an ID
+        employee.id = 1  # Example ID; replace with actual DB logic
+        return employee
+
 
     @property
     def name(self):
